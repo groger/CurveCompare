@@ -1,0 +1,95 @@
+<?xml version="1.2" encoding="utf-8"?>
+<executable>
+	<category>
+	</category>
+	<title>
+		CurveCompare
+	</title>
+	<description>
+		
+	</description>
+	<version>1.0</version>
+	<documentation-url></documentation-url>
+	<license></license>
+	<contributor>
+		Jean-Baptiste Berger,Gwendoline Roger
+	</contributor>
+	<acknowledgements></acknowledgements>
+	<parameters advanced="false">
+		<file>
+			<name>vtk_input1</name>
+			<longflag>--vtk_input1</longflag>
+			<label>VTK Input File 1</label>
+			<description>First vtk file to compare</description>
+			<channel>input</channel>
+			<default></default>
+		</file>
+		<file>
+			<name>vtk_input2</name>
+			<longflag>--vtk_input2</longflag>
+			<label>VTK Input File 2</label>
+			<description>Second vtk file to compare</description>
+			<channel>input</channel>
+			<default></default>
+		</file>
+		<file>
+			<name>ReferenceScalarVolume</name>
+			<longflag>--reference_volume</longflag>
+			<flag>R</flag>
+			<label>Reference Volume</label>
+			<description>Reference volume to create the label images to compute the overlap of the two fibers, the reference scalar image should fit the two fibers space</description>
+			<channel>input</channel>
+    		</file>
+		<string-vector>
+			<name>methods</name>
+			<flag>m</flag>
+			<longflag>--methods</longflag>
+			<label>Methods</label>
+			<description>List of methods to compute: "Overlap", "Mean", "Hausdorff", "None"</description>
+			<channel>input</channel>
+			<default>Mean,Hausdorff</default>
+		</string-vector>
+		<double>
+			<name>step</name>
+			<longflag>--step</longflag>
+			<label>Step</label>
+			<flag>s</flag>
+			<description>Step define the scale for the distance axis</description>
+			<channel>input</channel>
+			<default>-1</default>
+		</double>
+		<double>
+			<name>stepInterpolate</name>
+			<longflag>--stepI</longflag>
+			<label>Step to interpolate fiber</label>
+			<description>StepInterpolate define the scale to interpolate the two fibers that we compare (for the tangent and curve metric)</description>
+			<channel>input</channel>
+			<default>-1</default>
+		</double>
+		<integer>
+			<name>voxelLabel</name>
+			<longflag>--voxel_label</longflag>
+			<label>Label for voxelized fiber</label>
+			<description>Label for voxelized fiber</description>
+			<default>1</default>
+   		 </integer>
+		<integer>
+			<name>number_of_entries</name>
+			<longflag>--number_of_entries</longflag>
+			<label>Number of entries</label>
+			<flag>n</flag>
+			<description>Number of entries define the number of lines there will be in the table</description>
+			<channel>input</channel>
+			<default>100</default>
+		</integer>
+		<file>
+			<name>output_stat_file</name>
+			<longflag>--output_stat_file</longflag>
+			<label>Output Stat File</label>
+			<flag>o</flag>
+			<description>Output stat file name (.csv)</description>
+			<channel>output</channel>
+			<default></default>
+		</file>
+	</parameters>
+</executable>
